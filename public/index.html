@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shouting Game</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f7f7f7;
+        }
+        canvas {
+            border: 2px solid #333;
+            margin-bottom: 20px;
+        }
+        #ui {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    <div id="ui">
+        <h1>Shouting Game</h1>
+        <button id="startButton">Start Game</button>
+        <p id="score">Score: 0</p>
+    </div>
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        let score = 0;
+        let gameActive = false;
+
+        document.getElementById('startButton').addEventListener('click', () => {
+            score = 0;
+            gameActive = true;
+            document.getElementById('score').innerText = 'Score: ' + score;
+            startGame();
+        });
+
+        function startGame() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            // Game logic will go here
+            // For example, draw something on the canvas
+            ctx.fillStyle = 'skyblue';
+            ctx.fillRect(100, 100, 100, 100);
+        }
+
+    </script>
+</body>
+</html>
